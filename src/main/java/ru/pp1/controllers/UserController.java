@@ -27,12 +27,6 @@ public class UserController {
         return "index";
     }
 
-//    @GetMapping("/{id}")
-//    public String show(@PathVariable("id") int id, Model model) {
-//        model.addAttribute("user", userService.show(id));
-//        return "show";
-//    }
-
     @GetMapping("/new")
     public String newPerson(@ModelAttribute("user") User person) {
         return "new";
@@ -43,12 +37,6 @@ public class UserController {
         userService.save(person);
         return "redirect:/";
     }
-
-//    @GetMapping("/edit/{id}")
-//    public String edit(Model model, @PathVariable("id") int id) {
-//        model.addAttribute("user", userService.show(id));
-//        return "edit";
-//    }
 
     @PostMapping("/edit")
     public String update(User user) {
